@@ -48,19 +48,27 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(key) {
+    //Using a switch statement here to provide instuctions
+    //on how to handle each of the allowed keys. In addition,
+    //I've added if statements to restrict the player's movements
+    //to the confines of the canvas.
     switch (key) {
         case 'left':
-            this.x = this.x - 100
-            break;
+            if(this.x >= 100) {
+                this.x = this.x - 100
+            } break;
         case 'right':
-            this.x = this.x + 100
-            break;
+            if(this.x <= 300) {
+                this.x = this.x + 100
+            } break;
         case 'up':
-            this.y = this.y - 85
-            break;
+            if(this.y >= 65) {
+                this.y = this.y - 85
+            } break;
         case 'down':
-            this.y = this.y + 85
-            break;
+            if(this.y <= 320) {
+                this.y = this.y + 85
+            } break;
     }
 };
 
