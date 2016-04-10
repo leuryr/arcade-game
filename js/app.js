@@ -56,7 +56,7 @@ Player.prototype.update = function() {
     // If statement to detect if the player has won, by
     // passing the y coordinate of the water. Resets player
     // to starting position.
-    if(this.y<40) {
+    if(this.y < 40) {
         this.x = 215;
         this.y = 460;
     }
@@ -66,6 +66,7 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//Declaring variables for later use in player movement.
 var xTravel = 100,
     yTravel = 85;
 
@@ -104,23 +105,6 @@ var allEnemies = [
                 ];
 // Place the player object in a variable called player
 var player = new Player();
-
-checkCollisions = function() {
-    allEnemies.forEach(function(enemy) {
-        // Collision detection logic adapted from MDN.
-        // Added a bit of leniency to the detection boxes,
-        // to make the collisions more discernible, and to prevent
-        // triggering collision when not on the same row as enemy.
-        if(enemy.x < player.x + player.width &&
-            enemy.x + enemy.width > (player.x + player.width/2)  &&
-            enemy.y < player.y + player.height &&
-            enemy.y + enemy.height > (player.y + player.height/2)) {
-            player.x = 215;
-            player.y = 460;
-        }
-    });
-};
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

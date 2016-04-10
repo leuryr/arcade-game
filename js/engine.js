@@ -69,6 +69,23 @@ var Engine = (function(global) {
         main();
     }
 
+    /* This function checks for collisions between player and enemy objects.
+     * Logic adapted from MDN. Added a bit of leniency to the detection
+     * boxes,to make the collisions more discernible, and to  prevent
+     * triggering collision when not on the same row as enemy.
+     */
+   function checkCollisions() {
+        allEnemies.forEach(function(enemy) {
+            if(enemy.x < player.x + player.width &&
+                enemy.x + enemy.width > (player.x + player.width/2)  &&
+                enemy.y < player.y + player.height &&
+                enemy.y + enemy.height > (player.y + player.height/2)) {
+                player.x = 215;
+                player.y = 460;
+            }
+        });
+    }
+
     /* This function is called by main (our game loop) and itself calls all
      * of the functions which may need to update entity's data. Based on how
      * you implement your collision detection (when two entities occupy the
