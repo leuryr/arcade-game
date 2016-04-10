@@ -2,6 +2,10 @@
 
 This project is a clone of the classic arcade game **Frogger**.
 
+## Running The Game
+
+Download and unpack the repository to your computer, then open `index.html` to run the game in your browser window.
+
 ## Movement
 
 Use the arrow keys on your keyboard to move the player **left**, **right**, **up**, and **down**.
