@@ -6,9 +6,15 @@ var Enemy = function(yStart,speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug_edit.png';
-    this.speed = speed;
     this.x = 0;
+    // Each enemy object takes in yStart and speed
+    // parameters. yStart indicates the starting y cooridinate,
+    // speed indicates the enemy's speed.
     this.y = yStart;
+    this.speed = speed;
+    // Both enemy and player objects have width and height
+    // properties that reflect their sprite's resolution. Will
+    // help with collision detection later.
     this.width = 101;
     this.height = 82;
 };
@@ -20,6 +26,8 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     var distance = this.speed * dt;
+    // If statement to detect if enemy has left the board, and
+    // resets enemy to their starting position if it does.
     if(this.x < 520) {
         this.x += distance;
     } else {
@@ -39,11 +47,15 @@ var Player = function() {
     this.sprite = "images/char-boy_edit.png";
     this.x = 215;
     this.y = 460;
+    // Width and height properties reflect sprite resolution.
     this.width = 71;
     this.height = 93;
 };
 
 Player.prototype.update = function() {
+    // If statement to detect if the player has won, by
+    // passing the y coordinate of the water. Resets player
+    // to starting position.
     if(player.y<40) {
         player.x = 215;
         player.y = 460;
