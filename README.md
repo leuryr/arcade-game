@@ -1,6 +1,15 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Game Clone
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+This project is a clone of the classic arcade game **Frogger**.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Movement
+
+Use the arrow keys on your keyboard to move the player **left**, **right**, **up**, and **down**.
+
+## Collisions
+
+If your player touches one of the enemy bugs, you will be reset to your starting position. **Don't get caught!**
+
+## Winning
+
+Once you reach the safety of the water on the other end of the board, you'll have won the game, and player will be reset again.
