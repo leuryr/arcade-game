@@ -16,4 +16,4 @@ If your player touches one of the enemy bugs, you will be reset to your starting
 
 ## Winning
 
-Once you reach the safety of the water on the other end of the board, you'll have won the game, and player will be reset again.
+Once you reach the safety of the water on the other end of the board, you'll have won the game, and player will be reset.
