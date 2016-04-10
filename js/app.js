@@ -56,15 +56,18 @@ Player.prototype.update = function() {
     // If statement to detect if the player has won, by
     // passing the y coordinate of the water. Resets player
     // to starting position.
-    if(player.y<40) {
-        player.x = 215;
-        player.y = 460;
+    if(this.y<40) {
+        this.x = 215;
+        this.y = 460;
     }
 };
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+var xTravel = 100,
+    yTravel = 85;
 
 Player.prototype.handleInput = function(key) {
     // Using a switch statement here to provide instuctions
@@ -74,19 +77,19 @@ Player.prototype.handleInput = function(key) {
     switch (key) {
         case 'left':
             if(this.x >= 100) {
-                this.x = this.x - 100
+                this.x = this.x - xTravel;
             } break;
         case 'right':
             if(this.x <= 315) {
-                this.x = this.x + 100
+                this.x = this.x + xTravel;
             } break;
         case 'up':
             if(this.y >= 65) {
-                this.y = this.y - 85
-            } break;
+                this.y = this.y - yTravel;
+            } break;yTravel
         case 'down':
             if(this.y <= 375) {
-                this.y = this.y + 85
+                this.y = this.y + yTravel;
             } break;
     }
 };
